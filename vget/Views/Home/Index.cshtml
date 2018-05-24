@@ -1,0 +1,22 @@
+﻿@model InputModel
+
+<div class="row">
+
+    <h2>Ex. https://www.fshare.vn/file/3KD213EATJ</h2>
+
+    <form asp-controller="Home" asp-action="GetLink" method="post" class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="fshare link" asp-for="URL">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Get</button>
+        </div>
+    </form>
+    <div>
+        <p class="text-danger">@TempData["Error"]</p>
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Result</span>
+        </div>
+        <input class="form-control" type="url" value="@TempData["Result"]" />
+    </div>
+</div>
